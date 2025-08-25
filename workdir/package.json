@@ -2,6 +2,6 @@
   "name": "workdir",
   "packageManager": "yarn@4.8.1",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "react-native-sortable-list": "https://github.com/gitim/react-native-sortable-list.git#78c8ec0e66ba792784131065fbeab3f365deb0dc"
   }
 }

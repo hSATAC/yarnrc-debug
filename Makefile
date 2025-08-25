@@ -170,8 +170,8 @@ test-install:
 		echo "Initializing test project in workdir..."; \
 		cd workdir && yarn init -y; \
 	fi
-	@echo "Testing with package: lodash"
-	@cd workdir && yarn add lodash --verbose
+	@echo "Testing with package"
+	@cd workdir && yarn install --verbose
 	@echo "✓ Package installed successfully"
 
 # Full test cycle: clear everything and install
@@ -187,7 +187,7 @@ test-cycle: clear-cache
 		echo ""; \
 	fi
 	@echo "Step 2: Installing test package..."
-	@cd workdir && yarn add lodash
+	@cd workdir && yarn install
 	@echo ""
 	@echo "Step 3: Checking Verdaccio logs..."
 	@$(DOCKER) logs $(CONTAINER_NAME) --tail 10 | grep -E "(GET|POST|PUT)" || true
@@ -203,7 +203,7 @@ test-with-monitor:
 	@sleep 1
 	@echo ""
 	@echo "Installing package..."
-	@cd workdir && yarn add lodash
+	@cd workdir && yarn install
 	@echo ""
 	@echo "✓ Installation complete (check logs above for network activity)"
 
